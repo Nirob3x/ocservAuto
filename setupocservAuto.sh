@@ -33,9 +33,22 @@ sudo firewall-cmd --zone=public --permanent --add-port=443/udp
 sudo firewall-cmd --zone=public --permanent --add-port=10000/tcp
 sudo firewall-cmd --zone=public --permanent --add-port=10000/udp
 sudo firewall-cmd --zone=public --permanent --add-masquerade
+echo "net.ipv4.ip_forward = 1" >> /etc/sysctl.conf
 sudo systemctl reload firewalld
 sudo dnf install certbot -y
 sudo certbot certonly --standalone --preferred-challenges http --agree-tos --email $EmailTool -d $DomainTool
+
+cd /etc/ocserv
+rm ocserv.conf
+wget https://raw.githubusercontent.com/Nirob3x/ocservAuto/master/ocserv.conf
+echo "server-cert = /etc/letsencrypt/live/sp.vpnarea.club/fullchain.pem" >> ocserv.conf
+echo "server-key = /etc/letsencrypt/live/sp.vpnarea.club/privkey.pem" >> ocserv.conf
+echo "server-key = /etc/letsencrypt/live/sp.vpnarea.club/privkey.pem" >> ocserv.conf
+echo "default-domain = sp.vpnarea.club" >> ocserv.conf
+ cd ..
+ sudo systemctl restart ocserv
+ 
+
 
 
 
