@@ -30,8 +30,7 @@ sudo yum install firewalld -y
 sudo systemctl enable firewalld
 sudo firewall-cmd --zone=public --permanent --add-port=443/tcp
 sudo firewall-cmd --zone=public --permanent --add-port=443/udp
-sudo firewall-cmd --zone=public --permanent --add-port=10000/tcp
-sudo firewall-cmd --zone=public --permanent --add-port=10000/udp
+sudo firewall-cmd --zone=public --permanent --add-port=80/tcp
 sudo firewall-cmd --zone=public --permanent --add-masquerade
 echo "net.ipv4.ip_forward = 1" >> /etc/sysctl.conf
 sudo systemctl reload firewalld
