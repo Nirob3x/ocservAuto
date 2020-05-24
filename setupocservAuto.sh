@@ -41,10 +41,10 @@ sudo certbot certonly --standalone --preferred-challenges http --agree-tos --ema
 cd /etc/ocserv
 rm ocserv.conf
 wget https://raw.githubusercontent.com/Nirob3x/ocservAuto/master/ocserv.conf
-echo "server-cert = /etc/letsencrypt/live/sp.vpnarea.club/fullchain.pem" >> ocserv.conf
-echo "server-key = /etc/letsencrypt/live/sp.vpnarea.club/privkey.pem" >> ocserv.conf
-echo "server-key = /etc/letsencrypt/live/sp.vpnarea.club/privkey.pem" >> ocserv.conf
-echo "default-domain = sp.vpnarea.club" >> ocserv.conf
+echo "server-cert = /etc/letsencrypt/live/$DomainTool/fullchain.pem" >> ocserv.conf
+echo "server-key = /etc/letsencrypt/live/$DomainTool/privkey.pem" >> ocserv.conf
+echo "server-key = /etc/letsencrypt/live/$DomainTool/privkey.pem" >> ocserv.conf
+echo "default-domain = $DomainTool" >> ocserv.conf
  cd ..
  sudo systemctl restart ocserv
  
