@@ -48,6 +48,19 @@ echo "default-domain = $DomainTool" >> ocserv.conf
  cd ..
  sudo systemctl restart ocserv
  
+ 
+
+
+clear
+echo "   ___         _    ___  ___ ____   "
+echo "  / __|___ _ _| |_ / _ \/ __|__  |  "
+echo " | (__/ -_) ' \  _| (_) \__ \ / /   "
+echo "  \___\___|_||_\__|\___/|___//_/    "
+echo " OpenConnect VPN Server OneClick Install BY Nirob3x"
+ echo " "
+
+echo "Setup Finished"
+echo "For Paid Task and VPN Panel Knock me on WhatsApp +17312032777"
 
 
 
