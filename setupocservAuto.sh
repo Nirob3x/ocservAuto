@@ -32,8 +32,10 @@ sudo firewall-cmd --zone=public --permanent --add-port=443/tcp
 sudo firewall-cmd --zone=public --permanent --add-port=443/udp
 sudo firewall-cmd --zone=public --permanent --add-port=10000/tcp
 sudo firewall-cmd --zone=public --permanent --add-port=10000/udp
+sudo firewall-cmd --zone=public --permanent --add-masquerade
 sudo systemctl reload firewalld
 sudo dnf install certbot -y
-sudo certbot certonly --standalone --preferred-challenges http --agree-tos --email $EmailTool -d DomainTool
+sudo certbot certonly --standalone --preferred-challenges http --agree-tos --email $EmailTool -d $DomainTool
+
 
 
