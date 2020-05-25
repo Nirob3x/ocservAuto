@@ -28,6 +28,7 @@ sudo dnf install epel-release -y
 sudo dnf install ocserv -y
 sudo yum install firewalld -y
 sudo systemctl enable firewalld
+sudo systemctl start firewalld
 sudo firewall-cmd --zone=public --permanent --add-port=443/tcp
 sudo firewall-cmd --zone=public --permanent --add-port=443/udp
 sudo firewall-cmd --zone=public --permanent --add-port=80/tcp
